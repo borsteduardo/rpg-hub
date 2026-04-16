@@ -126,7 +126,7 @@
             <?php endif; ?>
 
             <form action="controllers/salvar_ficha_controller.php" method="POST">
-                <input type="hidden" name="id_campanha" value="<?php echo htmlspecialchars($id_campanha); ?>">
+                <input type="hidden" name="id_campanha" value="<?php echo htmlspecialchars($_GET['id_campanha'] ?? $_GET['id'] ?? 0); ?>">
 
                 <div class="mb-3">
                     <label class="form-label label-general">IDENTIFICAÇÃO DO PERSONAGEM *</label>

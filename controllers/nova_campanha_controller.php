@@ -1,41 +1,33 @@
 <?php
-require_once '../config/database.php';
 
-if (!isset($_SESSION['logado']) || $_SESSION['logado'] !== true) {
-    header("Location: ../index.php?rota=login");
-    exit();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
 }
 
+require_once '../config/database.php';
+require_once '../models/Campanha.php';
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $campanhaModel = new Campanha($pdo);
     
     $nome = trim($_POST['nome'] ?? '');
     $sistema = trim($_POST['sistema'] ?? '');
     $descricao = trim($_POST['descricao'] ?? '');
-    
-    $id_mestre = $_SESSION['id_usuario']; 
+    $id_mestre = (int)$_SESSION['id_usuario']; 
 
     if (empty($nome) || empty($sistema)) {
         header("Location: ../index.php?rota=nova_campanha&erro=vazio");
         exit();
     }
 
-    try {
-        $stmt = $pdo->prepare("INSERT INTO campanhas (id_mestre, nome, sistema, descricao) VALUES (:id_mestre, :nome, :sistema, :descricao)");
-        
-        $stmt->bindParam(':id_mestre', $id_mestre);
-        $stmt->bindParam(':nome', $nome);
-        $stmt->bindParam(':sistema', $sistema);
-        $stmt->bindParam(':descricao', $descricao);
-        
-        $stmt->execute();
+    if ($campanhaModel->criar($id_mestre, $nome, $sistema, $descricao)) {
         header("Location: ../index.php?rota=painel&sucesso=campanha_criada");
         exit();
-
-    } catch (PDOException $e) {
-        die("Erro ao arquivar a missão: " . $e->getMessage());
+    } else {
+        die("Erro ao tentar abrir o arquivo de investigação.");
     }
 
 } else {
-    header("Location: ../index.php?rota=nova_campanha");
+    header("Location: ../index.php?rota=painel");
     exit();
 }
