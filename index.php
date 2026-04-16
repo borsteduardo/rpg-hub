@@ -23,9 +23,9 @@ switch ($rota) {
 
     case 'detalhes_campanha':
         require_once 'controllers/detalhes_controller.php';
-        break
+        break;
 
-    case 'nova_ficha';
+    case 'nova_ficha':
         require_once 'views/nova_ficha.php';
         break;
 
