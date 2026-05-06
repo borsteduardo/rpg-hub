@@ -1,0 +1,13 @@
+{
+  "name": "rpg-hub/app",
+  "description": "Sistema de gerenciamento de mesas de RPG",
+  "require": {
+    "guzzlehttp/guzzle": "^7.8"
+  },
+  "autoload": {
+    "classmap": [
+      "models/",
+      "controllers/"
+    ]
+  }
+}
