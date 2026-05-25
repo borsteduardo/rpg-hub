@@ -1,0 +1,121 @@
+:root {
+  --bg-dark: #0a0a0a;
+  --card-bg: #161616;
+  --accent-blue: #0dcaf0;
+  --accent-red: #dc3545;
+  --border-color: #333;
+  --input-bg: #1f1f1f;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: #e0e0e0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding-top: 50px;
+  background-image: radial-gradient(circle, #1a1a1a 1px, transparent 1px);
+  background-size: 25px 25px;
+}
+
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-top: 5px solid var(--accent-blue);
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+}
+
+h2 {
+  font-family: "Special Elite", cursive;
+  color: #fff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 15px;
+}
+
+.form-label {
+  font-family: "Special Elite", cursive;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.label-general {
+  color: var(--accent-blue);
+}
+.label-hp {
+  color: var(--accent-red);
+}
+.label-san {
+  color: #5bc0de;
+}
+
+.form-control {
+  background-color: var(--input-bg);
+  border: 1px solid var(--border-color);
+  color: #fff;
+  padding: 10px;
+  transition: all 0.3s;
+}
+
+.form-control:focus {
+  background-color: #252525;
+  border-color: var(--accent-blue);
+  color: #fff;
+  box-shadow: 0 0 0 0.25rem rgba(13, 202, 240, 0.15);
+}
+
+.form-control::placeholder {
+  color: #444;
+}
+
+input[type="number"] {
+  font-family: "Special Elite", cursive;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.btn-info {
+  background-color: var(--accent-blue);
+  border: none;
+  color: #000;
+  padding: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+
+.btn-info:hover {
+  background-color: #0baccc;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(13, 202, 240, 0.3);
+}
+
+.btn-outline-secondary {
+  border-color: #444;
+  color: #888;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  margin-top: 10px;
+}
+
+.alert-danger {
+  background-color: #2d0f0f;
+  color: #ff7575;
+  border: 1px solid #5c1e1e;
+  font-family: "Special Elite", cursive;
+  font-size: 0.8rem;
+}
+
+.section-divider {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--border-color),
+    transparent
+  );
+  margin: 25px 0;
+}

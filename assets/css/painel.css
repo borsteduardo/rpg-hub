@@ -1,0 +1,68 @@
+:root {
+  --bg-dark: #0a0a0a;
+  --card-bg: #161616;
+  --accent-purple: #6200ff;
+  --accent-admin: #ff0000;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: #e0e0e0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding-top: 50px;
+}
+
+h1 {
+  font-family: "Special Elite", cursive;
+  color: #fff;
+  letter-spacing: 2px;
+}
+
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid #333;
+  border-top: 4px solid var(--accent-purple);
+  border-radius: 8px;
+}
+
+.perfil-badge {
+  font-size: 0.9rem;
+  padding: 5px 15px;
+  border-radius: 20px;
+  background: #222;
+  border: 1px solid #444;
+}
+
+.table {
+  --bs-table-bg: transparent;
+  color: #e0e0e0;
+  border-color: #333;
+}
+.table thead th {
+  border-bottom: 2px solid var(--accent-purple);
+  color: var(--accent-purple);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+
+.alert-success {
+  background-color: #0f2d1a;
+  color: #75ff9a;
+  border: 1px solid #1e5c35;
+}
+hr {
+  border-top: 1px solid #333;
+  opacity: 1;
+}
+
+.btn-admin {
+  background: transparent;
+  border: 1px solid var(--accent-admin);
+  color: var(--accent-admin);
+  font-family: "Special Elite", cursive;
+  transition: 0.3s;
+}
+.btn-admin:hover {
+  background: var(--accent-admin);
+  color: #fff;
+}

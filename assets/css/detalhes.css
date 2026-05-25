@@ -1,0 +1,94 @@
+:root {
+  --bg-dark: #0a0a0a;
+  --card-bg: #161616;
+  --accent-warning: #ffc107;
+  --accent-info: #0dcaf0;
+  --border-color: #333;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: #e0e0e0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding-top: 30px;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url("https://www.transparenttextures.com/patterns/dark-leather.png");
+}
+
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+h2,
+h4 {
+  font-family: "Special Elite", cursive;
+  letter-spacing: 1px;
+}
+
+.border-warning-custom {
+  border-left: 5px solid var(--accent-warning) !important;
+}
+
+.text-muted-custom {
+  color: #888;
+  font-style: italic;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.table {
+  --bs-table-bg: transparent;
+  color: #e0e0e0;
+  margin-bottom: 0;
+}
+.table thead th {
+  border-bottom: 2px solid #444;
+  color: var(--accent-info);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+}
+.table tbody tr {
+  border-bottom: 1px solid #222;
+  transition: 0.3s;
+}
+.table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.badge-nex {
+  background-color: #333;
+  color: var(--accent-warning);
+  border: 1px solid var(--accent-warning);
+  font-family: "Special Elite", cursive;
+  padding: 5px 10px;
+}
+
+.stat-val {
+  font-family: "Special Elite", cursive;
+  font-size: 1.1rem;
+}
+
+.btn-outline-secondary {
+  border-color: #444;
+  color: #aaa;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.folder-icon {
+  font-size: 1.5rem;
+  margin-right: 10px;
+  vertical-align: middle;
+}

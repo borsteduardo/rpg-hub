@@ -5,14 +5,7 @@
     <title>RPG Hub - OVERSEER ADMIN</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
-    <style>
-        :root { --admin-red: #ff0000; --bg-admin: #050505; }
-        body { background: var(--bg-admin); color: #00ff00; font-family: 'Special Elite', cursive; padding: 20px; }
-        .card-admin { background: #111; border: 1px solid var(--admin-red); border-radius: 0; }
-        .stat-box { border: 1px solid #333; padding: 15px; text-align: center; background: #000; }
-        .table { color: #00ff00; border-color: #333; }
-        .badge-admin { background: var(--admin-red); color: white; }
-    </style>
+    <link rel="stylesheet" href="assets/css/admin.css">
 </head>
 <body>
     <div class="container">
