@@ -29,10 +29,18 @@ switch ($rota) {
         require_once 'views/nova_ficha.php';
         break;
 
+        case 'ver_ficha':
+        require_once 'controllers/ver_ficha_controller.php';
+        break;
+
     case 'admin':
         require_once 'controllers/admin_controller.php';
         break;
 
+
+    case 'logout':
+        require_once 'controllers/logout_controller.php';
+        break;
     default:
         echo "<h1>Erro 404: Arquivo não encontrado nos registros da Ordem.</h1>";
         echo "<a href='index.php?rota=login'>Voltar para a segurança</a>";
