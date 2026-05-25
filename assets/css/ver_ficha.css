@@ -1,65 +1,130 @@
+body {
+  background-color: #121416;
+}
+
 .dossier-card {
   background-color: #1a1d20;
   border: 1px solid #444;
   border-radius: 8px;
-  max-width: 700px;
   border-top: 4px solid #ffc107;
 }
 
 .agent-name {
-  color: #f8f9fa;
+  color: #ffffff !important;
   text-transform: uppercase;
   font-weight: 800;
   letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .nex-badge {
   background-color: #ffc107;
-  color: #000;
+  color: #000000 !important;
   padding: 5px 15px;
-  font-weight: bold;
+  font-weight: 900;
   border-radius: 4px;
   letter-spacing: 2px;
-  font-size: 1.1rem;
-  box-shadow: 0 0 10px rgba(255, 193, 7, 0.3);
+}
+
+.text-muted,
+h6.text-muted {
+  color: #f8f9fa !important;
+  opacity: 0.8;
 }
 
 .status-box {
-  background-color: #212529;
+  background-color: #111;
   border-radius: 6px;
-  padding: 20px;
+  padding: 20px 10px;
   text-align: center;
-  border: 1px solid #333;
+  border: 1px solid #444;
 }
 
 .status-pv {
   border-bottom: 4px solid #dc3545;
 }
-
 .status-san {
   border-bottom: 4px solid #0dcaf0;
 }
 
 .status-label {
   display: block;
-  font-size: 0.85rem;
-  font-weight: bold;
+  font-size: 0.9rem;
+  font-weight: 800;
   letter-spacing: 1px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 .status-value {
-  font-size: 2.5rem;
+  color: #ffffff !important;
+}
+
+.btn-stat {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
   font-weight: bold;
+  border-width: 2px;
 }
 
 .history-box {
-  background-color: #111;
-  border-left: 4px solid #6c757d;
-  padding: 15px 20px;
-  color: #f5f5f5;
+  background-color: #000000;
+  border-left: 4px solid #ffc107;
+  padding: 20px;
+  border-radius: 0 6px 6px 0;
+  color: #ffffff !important;
   font-family: "Courier New", Courier, monospace;
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.8;
+  box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.05);
+}
+
+.rolagem-card {
+  background-color: #1a1d20;
+  border: 1px solid #444;
+  border-radius: 8px;
+}
+
+.rolagem-card h5.text-warning {
+  color: #ffc107 !important;
+  font-family: "Special Elite", cursive;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.input-group-text {
+  background-color: #343a40 !important;
+  color: #ffffff !important;
+  border-color: #444 !important;
+}
+
+#qtd_dados {
+  color: #ffc107 !important;
+  background-color: #111 !important;
+}
+
+.resultado-box {
+  background-color: #000000;
+  border: 2px solid #ffc107;
+}
+
+#resultado_dado {
+  color: #ffffff !important;
+  font-weight: 900;
+}
+
+#detalhes_dado {
+  color: #f8f9fa !important;
   font-size: 0.95rem;
-  line-height: 1.6;
-  border-radius: 0 4px 4px 0;
+  font-weight: 600;
+}
+
+#resultado_dado.text-success {
+  color: #2ecc71 !important;
+}
+#resultado_dado.text-danger {
+  color: #e74c3c !important;
 }

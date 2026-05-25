@@ -41,6 +41,11 @@ switch ($rota) {
     case 'logout':
         require_once 'controllers/logout_controller.php';
         break;
+
+    case 'atualizar_status':
+        require_once 'controllers/atualizar_status_controller.php';
+        break;
+        
     default:
         echo "<h1>Erro 404: Arquivo não encontrado nos registros da Ordem.</h1>";
         echo "<a href='index.php?rota=login'>Voltar para a segurança</a>";
