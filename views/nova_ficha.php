@@ -5,19 +5,23 @@
     <title>RPG Hub - Ficha de Agente</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/nova_ficha.css">
+    <link rel="stylesheet" href="/rpg-hub/assets/css/nova_ficha.css">
 </head>
 <body>
     <div class="container d-flex justify-content-center mb-5">
         <div class="card shadow p-4 w-100" style="max-width: 650px;">
             <h2 class="mb-4 text-center">📋 REGISTRO DE INVESTIGADOR</h2>
             
-            <?php if(isset($_GET['erro']) && $_GET['erro'] == 'vazio'): ?>
+            <?php if(isset($_GET['erro']) && $_GET['erro'] == 'campos_vazios'): ?>
                 <div class="alert alert-danger text-center">AVISO: DADOS OBRIGATÓRIOS AUSENTES NO FORMULÁRIO.</div>
+            <?php elseif(isset($_GET['erro']) && $_GET['erro'] == 'banco'): ?>
+                <div class="alert alert-danger text-center">ERRO: FALHA CRÍTICA AO ARQUIVAR FICHA NO BANCO DE DADOS.</div>
+            <?php elseif(isset($_GET['erro']) && $_GET['erro'] == 'campanha_invalida'): ?>
+                <div class="alert alert-danger text-center">ERRO: IDENTIFICADOR DE CAMPANHA VIOLADO OU CORROMPIDO.</div>
             <?php endif; ?>
 
-            <form action="controllers/salvar_ficha_controller.php" method="POST">
-                <input type="hidden" name="id_campanha" value="<?php echo htmlspecialchars($_GET['id_campanha'] ?? $_GET['id'] ?? 0); ?>">
+            <form action="/rpg-hub/nova_ficha" method="POST">
+                <input type="hidden" name="id_campanha" value="<?php echo htmlspecialchars($_GET['id_campanha'] ?? 0); ?>">
 
                 <div class="mb-3">
                     <label class="form-label label-general">IDENTIFICAÇÃO DO PERSONAGEM *</label>
@@ -55,7 +59,7 @@
 
                 <div class="pt-2">
                     <button type="submit" class="btn btn-info w-100">FINALIZAR DOCUMENTO</button>
-                    <a href="index.php?rota=painel" class="btn btn-outline-secondary w-100">CANCELAR REGISTRO</a>
+                    <a href="/rpg-hub/painel" class="btn btn-outline-secondary w-100 mt-2">CANCELAR REGISTRO</a>
                 </div>
             </form>
         </div>

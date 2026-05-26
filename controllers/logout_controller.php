@@ -1,10 +1,9 @@
 <?php
-session_start();
 
 session_unset();
 
 session_destroy();
 
-header("Location: ../index.php?rota=login");
-exit();
+header("Location: /rpg-hub/login");
+exit;
 ?>

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RPG Hub - Dossiê do Agente</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/ver_ficha.css?v=2">
+    <link rel="stylesheet" href="/rpg-hub/assets/css/ver_ficha.css?v=2">
 </head>
 <body>
     <div class="container py-5 mb-5">
@@ -15,7 +15,7 @@
                 <div class="dossier-card shadow p-4 position-relative h-100">
                     <div class="d-flex justify-content-between align-items-center mb-4">
                         <span class="text-muted small">OPERAÇÃO: <?= htmlspecialchars($ficha['nome_campanha']) ?></span>
-                        <a href="index.php?rota=painel" class="btn btn-sm btn-outline-secondary">« Retornar à Base</a>
+                        <a href="/rpg-hub/painel" class="btn btn-sm btn-outline-secondary">« Retornar à Base</a>
                     </div>
 
                     <div class="text-center mb-5">
@@ -152,7 +152,7 @@
             });
         });
 
-        const idFichaAtual = <?= $ficha['id'] ?>; 
+        const idFichaAtual = <?= (int)$ficha['id'] ?>; 
 
         document.querySelectorAll('.btn-stat').forEach(btn => {
             btn.addEventListener('click', function() {
@@ -169,14 +169,14 @@
 
                 display.innerText = valorAtual;
 
-                fetch('index.php?rota=atualizar_status', {
+                // Corrigido para caminho absoluto e Template Literals com crases (Backticks)
+                fetch('/rpg-hub/atualizar_status', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                     body: `id_ficha=${idFichaAtual}&campo=${stat}&valor=${valorAtual}`
                 }).catch(error => console.error("Erro ao salvar status:", error));
             });
         });
-
     </script>
 </body>
 </html>

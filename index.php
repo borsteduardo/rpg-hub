@@ -1,16 +1,27 @@
 <?php
 session_start();
 
+require_once 'vendor/autoload.php';
+require_once 'config/database.php';
+
 $rota = $_GET['rota'] ?? 'login';
 
 switch ($rota) {
 
     case 'login':
-        require_once 'views/login.php';
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            require_once 'controllers/login_controller.php';
+        } else {
+            require_once 'views/login.php';
+        }
         break;
 
     case 'cadastro':
-        require_once 'views/cadastro.php';
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            require_once 'controllers/cadastro_controller.php';
+        } else {
+            require_once 'views/cadastro.php';
+        }
         break;
 
     case 'painel':
@@ -18,7 +29,11 @@ switch ($rota) {
         break;
 
     case 'nova_campanha':
-        require_once 'views/nova_campanha.php';
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            require_once 'controllers/nova_campanha_controller.php';
+        } else {
+            require_once 'views/nova_campanha.php';
+        }
         break;
 
     case 'detalhes_campanha':
@@ -26,17 +41,20 @@ switch ($rota) {
         break;
 
     case 'nova_ficha':
-        require_once 'views/nova_ficha.php';
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            require_once 'controllers/salvar_ficha_controller.php';
+        } else {
+            require_once 'views/nova_ficha.php';
+        }
         break;
 
-        case 'ver_ficha':
+    case 'ver_ficha':
         require_once 'controllers/ver_ficha_controller.php';
         break;
 
     case 'admin':
         require_once 'controllers/admin_controller.php';
         break;
-
 
     case 'logout':
         require_once 'controllers/logout_controller.php';
@@ -48,6 +66,6 @@ switch ($rota) {
         
     default:
         echo "<h1>Erro 404: Arquivo não encontrado nos registros da Ordem.</h1>";
-        echo "<a href='index.php?rota=login'>Voltar para a segurança</a>";
+        echo "<a href='/rpg-hub/login'>Voltar para a segurança</a>";
         break;
 }

@@ -1,5 +1,4 @@
 <?php
-require_once 'config/database.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_SESSION['id_usuario'])) {
     
@@ -29,4 +28,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_SESSION['id_usuario'])) {
     http_response_code(403);
     echo "Acesso negado";
 }
-?>

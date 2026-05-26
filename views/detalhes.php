@@ -5,7 +5,7 @@
     <title>RPG Hub - Dossiê da Missão</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/detalhes.css">
+    <link rel="stylesheet" href="/rpg-hub/assets/css/detalhes.css">
 </head>
 <body>
     <div class="container pb-5">
@@ -15,7 +15,7 @@
                     <h2 class="text-warning mb-1">📂 DOSSIÊ: <?php echo htmlspecialchars($campanha['nome']); ?></h2>
                     <p class="mb-3"><span class="badge bg-dark border border-secondary text-secondary uppercase">Sistema: <?php echo htmlspecialchars($campanha['sistema']); ?></span></p>
                 </div>
-                <a href="index.php?rota=painel" class="btn btn-sm btn-outline-secondary">« Voltar à Base</a>
+                <a href="/rpg-hub/painel" class="btn btn-sm btn-outline-secondary">« Voltar à Base</a>
             </div>
             
             <div class="bg-dark p-3 rounded border border-secondary mt-2">
@@ -28,11 +28,11 @@
             
             <?php if (empty($fichas)): ?>
                 <div class="text-center py-5">
-                    <p class="text-muted italic">Nenhum investigador se alistou para esta operação até o momento.</p>
+                    <p class="text-muted italic">Nenhum investigador se alistou para esta operation até o momento.</p>
                 </div>
             <?php else: ?>
                 <div class="table-responsive">
-                    <table class="table align-middle">
+                    <table class="table table-dark align-middle">
                         <thead>
                             <tr>
                                 <th>Jogador</th>

@@ -1,13 +1,13 @@
 {
-  "name": "rpg-hub/app",
-  "description": "Sistema de gerenciamento de mesas de RPG",
-  "require": {
-    "guzzlehttp/guzzle": "^7.8"
-  },
+  "name": "rpg-hub/projeto",
+  "description": "Sistema RPG Hub",
+  "type": "project",
   "autoload": {
     "classmap": [
-      "models/",
-      "controllers/"
+      "models/"
     ]
+  },
+  "require": {
+    "vlucas/phpdotenv": "^5.6"
   }
 }

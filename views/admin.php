@@ -5,13 +5,13 @@
     <title>RPG Hub - OVERSEER ADMIN</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/admin.css">
+    <link rel="stylesheet" href="/rpg-hub/assets/css/admin.css">
 </head>
 <body>
     <div class="container">
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h1 class="text-danger">⚠️ OVERSEER SYSTEM v1.0</h1>
-            <a href="index.php?rota=painel" class="btn btn-outline-light btn-sm">Sair do Modo Admin</a>
+            <a href="/rpg-hub/painel" class="btn btn-outline-light btn-sm">Sair do Modo Admin</a>
         </div>
 
         <div class="row mb-4">
@@ -48,7 +48,7 @@
                             <?php foreach($listaMesas as $m): ?>
                             <tr>
                                 <td><?php echo $m['nome']; ?></td>
-                                <td class="text-info"><?php echo $m['mestre']; ?></td>
+                                <td><span class="text-info"><?php echo $m['mestre']; ?></span></td>
                             </tr>
                             <?php endforeach; ?>
                         </tbody>

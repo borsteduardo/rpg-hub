@@ -1,10 +1,6 @@
 <?php
-require_once 'config/database.php';
-require_once 'models/Campanha.php';
-require_once 'models/Ficha.php'; // Necessário para listar as fichas do jogador
-
 if (!isset($_SESSION['logado'])) {
-    header("Location: index.php?rota=login");
+    header("Location: /rpg-hub/login");
     exit();
 }
 

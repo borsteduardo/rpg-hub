@@ -5,7 +5,7 @@
     <title>RPG Hub - Base da Guilda</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/painel.css">
+    <link rel="stylesheet" href="/rpg-hub/assets/css/painel.css">
 </head>
 <body>
     <div class="container mb-5">
@@ -59,20 +59,20 @@
 
                                         <td class="text-center">
                                             <?php if ($_SESSION['perfil_atual'] === 'mestre'): ?>
-                                                <a href="index.php?rota=detalhes_campanha&id=<?= $campanha['id']; ?>" class="btn btn-sm btn-outline-warning px-3">Dossiê</a>
+                                                <a href="/rpg-hub/detalhes_campanha?id=<?= $campanha['id']; ?>" class="btn btn-sm btn-outline-warning px-3">Dossiê</a>
                                             <?php else: ?>
                                                 
                                                 <?php if (in_array($campanha['id'], $campanhasComFicha)): ?>
-                                                    <a href="index.php?rota=ver_ficha&id_campanha=<?= $campanha['id']; ?>" class="btn btn-sm btn-success px-3">Ver Ficha</a>
+                                                    <a href="/rpg-hub/ver_ficha?id_campanha=<?= $campanha['id']; ?>" class="btn btn-sm btn-success px-3">Ver Ficha</a>
                                                 <?php else: ?>
-                                                    <a href="index.php?rota=nova_ficha&id_campanha=<?= $campanha['id']; ?>" class="btn btn-sm btn-outline-info px-3">Alistar-se</a>
+                                                    <a href="/rpg-hub/nova_ficha?id_campanha=<?= $campanha['id']; ?>" class="btn btn-sm btn-outline-info px-3">Alistar-se</a>
                                                 <?php endif; ?>
 
                                             <?php endif; ?>
                                         </td>
                                     </tr>
-                                <?php endforeach; ?>
-                            </tbody>
+                                </tbody>
+                            <?php endforeach; ?>
                         </table>
                     </div>
                 <?php endif; ?>
@@ -81,17 +81,17 @@
             <div class="row g-3 mt-2">
                 <?php if ($_SESSION['perfil_atual'] === 'mestre'): ?>
                     <div class="col-md-6">
-                        <a href="index.php?rota=nova_campanha" class="btn btn-success w-100 py-2 fw-bold">➕ INICIAR NOVA CAMPANHA</a>
+                        <a href="/rpg-hub/nova_campanha" class="btn btn-success w-100 py-2 fw-bold">➕ INICIAR NOVA CAMPANHA</a>
                     </div>
                 <?php endif; ?>
 
                 <div class="<?= ($_SESSION['perfil_atual'] === 'mestre') ? 'col-md-6' : 'col-12'; ?>">
-                    <a href="index.php?rota=logout" class="btn btn-outline-danger w-100 py-2 fw-bold">SAIR DA BASE</a>
+                    <a href="/rpg-hub/logout" class="btn btn-outline-danger w-100 py-2 fw-bold">SAIR DA BASE</a>
                 </div>
 
                 <?php if (isset($_SESSION['nivel']) && $_SESSION['nivel'] === 'admin'): ?>
                     <div class="col-12 pt-3">
-                        <a href="index.php?rota=admin" class="btn btn-admin w-100 py-2">⚙️ ACESSAR TERMINAL OVERSEER (ADMIN)</a>
+                        <a href="/rpg-hub/admin" class="btn btn-admin w-100 py-2">⚙️ ACESSAR TERMINAL OVERSEER (ADMIN)</a>
                     </div>
                 <?php endif; ?>
             </div>

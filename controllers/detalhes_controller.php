@@ -1,8 +1,10 @@
 <?php
-require_once 'config/database.php';
+// Não precisa de session_start() aqui, o index.php já fez isso.
+// Removido o require_once do banco, o index.php já injetou a variável $pdo.
 
+// Trava de segurança: impede que usuários deslogados acessem os dossiês
 if (!isset($_SESSION['logado'])) {
-    header("Location: index.php?rota=login");
+    header("Location: /rpg-hub/login");
     exit();
 }
 

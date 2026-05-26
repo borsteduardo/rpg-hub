@@ -1,6 +1,4 @@
 <?php
-require_once '../config/database.php';
-require_once '../models/Usuario.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nome = trim($_POST['nome'] ?? '');
@@ -10,11 +8,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $usuarioModel = new Usuario($pdo);
 
     if ($usuarioModel->emailJaExiste($email)) {
-        die("Este e-mail já está registrado na base da Ordem.");
+        header("Location: /rpg-hub/cadastro?erro=email_existe");
+        exit();
     }
 
     if ($usuarioModel->criar($nome, $email, $senha)) {
-        header("Location: ../index.php?rota=login&sucesso=conta_criada");
+        header("Location: /rpg-hub/login?sucesso=conta_criada");
         exit();
     }
 }
